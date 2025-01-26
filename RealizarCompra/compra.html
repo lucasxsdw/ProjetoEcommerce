@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar</title>
+    <link rel="stylesheet" href="compra.css">
+    <link rel="stylesheet" href="../global.css">
+    <script src="compra.js" defer></script>
+</head>
+<body>
+    <div class="container-comprar">
+        <div class="container-imgSmall">
+            <img src="../img/minimalist oversized t-shirt in blue with details on the back (4).png" alt="">
+            <img src="../img/minimalist oversized t-shirt in brown with details on the back.png" alt="">
+            <img src="../img/minimalist oversized t-shirt with white background.png" alt="">
+        
+        </div>
+        <div class="container-img">
+            <img class="img-camisa" src="../img/DALL·E 2025-01-11 11.10.50 - An oversized black t-shirt displayed from the back, featuring a bold and modern typography design. The text design is similar to gothic or futuristic .webp" alt="">
+            </div>
+                
+        <div class="descricao">
+            <p class="p1">Camisa Oversize Urbana Preta</p>
+            <p class="p2">R$130,00</p>
+            <p class="p3">ou 5 x de R$26,50 sem juros</p>
+
+            <div class="tamanhos">
+                <button class="tam" >P</button>
+                <button class="tam" >M</button>
+                <button class="tam" >G</button>
+                <button class="tam" >XL</button>
+            </div>
+
+          <form action="adcionarCarrinho.php" method="post">
+            <input type="hidden" name="produto_id" value="1">
+            <input type="hidden" name="produto_nome" value="Camisa Oversize Urbana Preta">
+            <input type="hidden" name="produto_preco" value="R$130,00">
+            <input type="hidden" name="produto_imagem" value="/ProjetoEcommerce/img/minimalist-oversized-t-shirt-in-brown.png">
+
+            <button type="submit" class="buy-button">Comprar</button>          
+          </form>  
+          
+           
+            <hr class="linha">
+
+            <p class="frete">Consulte o prazo de entrega</p>
+            <form class="container-frete" action="" method="post">
+                <input type="number" id="numFrete" name="numFrete" placeholder="Insira seu cep" required>
+                <button class="botao-frete">Calcular</button>
+            </form>
+          
+        </div>
+    </div>
+    <div class="container-descricao">
+        <p class="titulo-descricao">Descrição</p>
+        <p>Essa camisa oversize foi criada para oferecer o máximo de conforto e estilo. Confeccionada em tecido 100% algodão premium, proporciona um toque macio na pele, alta durabilidade e respirabilidade, ideal para qualquer estação do ano. O design apresenta costuras reforçadas e acabamento impecável, garantindo qualidade e resistência ao uso diário. Com seu corte amplo e modelagem despojada, ela se adapta a diferentes corpos, proporcionando liberdade de movimento e um visual moderno. Cada detalhe foi pensado para unir funcionalidade e estética, tornando essa peça essencial em seu guarda-roupa.</p>
+    </div>
+   
+
+    <div class="footer">
+        <a href="">Contato</a>   
+        <a href="">Quem somos</a>
+        <a href="">FAQ</a>
+        <a href="">Política da loja</a>
+        <a href="">Métodos de pagamento </a>
+    </div>
+
+    <div class="foote-2">
+        <p>@2025 por EasyBuy</p>
+    </div>
+</body>
+</html>

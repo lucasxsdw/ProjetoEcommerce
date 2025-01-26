@@ -1,0 +1,83 @@
+
+body{
+    background-color: #F2F2F2;
+}
+
+
+.container-catalago {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.container-img {
+    flex: 1 1 calc(33.33% - 40px); 
+    max-width: calc(33.33% - 40px); 
+    background-color: #fff;
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.buy-button {
+    width: 130px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bolder;
+    color: #fff;
+    background-color: rgb(11, 212, 11);
+    cursor: pointer;
+}
+
+.cart-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 130px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bolder;
+    color: #0e0d0d;
+    background-color: #9e9898;
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 20px;
+    height: auto;
+    color: #fff;
+}
+
+.descricao-camisa{
+    max-width: 100%;
+
+}
+
+.descricao-camisa p{
+    text-align: center;
+
+
+}
