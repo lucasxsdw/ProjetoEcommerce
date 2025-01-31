@@ -18,7 +18,7 @@ if (isset($_SESSION['carrinho']) && is_array($_SESSION['carrinho']) && count($_S
         }
     }
 } else {
-    echo "<h2>Seu carrinho está vazio.</h2>";
+      echo "<h2>Seu carrinho está vazio.</h2>";
 }
 
     

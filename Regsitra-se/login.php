@@ -5,6 +5,7 @@ include "conexao.php";
 error_reporting(E_ALL);
 ini_set('DISPLAY_ERRORS', 1);
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $senha = mysqli_real_escape_string($conn, $_POST['senha']);
@@ -18,15 +19,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (mysqli_num_rows($result) > 0) {
        $usuario = mysqli_fetch_assoc($result);
-
-
        if (password_verify($senha, $usuario['senha'])) {
               echo "Login realizado com sucesso";
+           //   header("Location: paginaIInicial.html"); exit();
        }else{
            echo "Email ou senha invalido";
-       }
+       } 
        
-    }
+    }else{
+        echo "Email não encontrado";
+    } 
+
 
 
     mysqli_stmt_close($stmt);
