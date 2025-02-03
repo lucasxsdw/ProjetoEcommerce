@@ -42,6 +42,7 @@ header{
     text-decoration: none;
     color: #6A6A6A;
     font-size: 16px;
+    
 
 }
 
@@ -51,7 +52,7 @@ header{
 }
 
 .imgPrincipal{
-    margin-top: -150px;
+    margin-top: -130px;
     display: flex;
     justify-content: center;
     align-items: center;
