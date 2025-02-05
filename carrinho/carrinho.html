@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="carrinho.css">
+   
     <title>Carrinho</title>
 </head>
 <body>
@@ -11,14 +12,26 @@
         <div class="containerProdutos">
             <div class="produtosCarrinho"> 
                 <button id="EcluirProduto"><img class="excluirProduto" src="image.png" alt=""></button>   
+             
                 <div class="linha"></div>
 
                 <div class="quantidadePreco">
                     <label>Quantidade:</label>
-                    <button class="menos" >-</button>
-                    <input type="text" value="1">
-                    <button class="mais" >+</button>
+                    <button type="button" class="menos" >-</button>
+                    <input id="numeroProdutos" type="number" value="1">
+                    <button type="button" class="mais" >+</button>
                 </div>
+
+                <div class="container-preco">
+                    <p class="precoAntigo">R$ 1.399,90</p>
+                    <p class="desconto">42% OFF</p>
+                   
+                </div>
+                
+                <div class="containerPrecoAtual">
+                    <p class="precoAtual">R$ 799,96</p>
+                </div>
+               
                 <a class="textExplorar" href=""><p>Explorar mais produtos desta loja</p></a>
                    
                 
@@ -29,5 +42,16 @@
            
         </div>
     </div>
+
+            <script>
+                const diminuirQtd = document.querySelector(".menos");
+        const aumentarQtd = document.querySelector(".mais");
+        const numProduct  = document.querySelector("#numeroProdutos");
+
+        aumentarQtd.addEventListener("click", () => {
+            console.log("clicou");
+        });
+
+            </script>
 </body>
 </html>
