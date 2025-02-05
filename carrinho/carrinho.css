@@ -1,0 +1,75 @@
+body{
+    background-color: #F2F2F2;
+}
+
+
+.container-carrinho{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+   
+}
+.produtosCarrinho {
+    background-color: #fff;
+    height: 300px;
+    width: 600px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    padding: 10px;
+    position: relative; 
+    border: 1px solid rgb(206, 206, 206)  ;
+    
+}
+
+.linha {
+    width: 100%;
+    height: 2px;
+    background-color: #F2F2F2;
+    margin-top: 150px; 
+}
+
+#EcluirProduto{
+    height: 30px;
+    margin-left: 560px;
+    border: none;
+    background-color: #fff;
+
+}
+
+.excluirProduto{
+    height: 20px;
+}
+
+.quantidadePreco {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+   
+}
+
+label{
+    font-family: Arial;
+    color: #696969;
+}
+
+.menos,
+ .mais{
+    border-radius: 30px;
+    height: 24px;
+    border: none;
+    border: 2px solid rgb(161, 212, 132);
+}
+
+
+.textExplorar{
+    font-weight: 100;
+    color: black;
+    margin-top: 30px;
+
+}
+

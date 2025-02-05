@@ -132,9 +132,11 @@ body{
     
 }
 
-.produtosCarrinho{
-    background-color: #F2F2F2;
-    height: 300px;
-    width: 350px;
-    
+.containerButton{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
 }
+
+
