@@ -12,20 +12,18 @@ body{
     box-shadow: -2px 0 10px rgb(0, 0, 0, 0.2);
     height: 100vh;
     width: 370px;
-    background-color: #000000;
-    /*opacity: 0;*/
-    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out; 
-
-   
+    background-color: #ffffff;
+    opacity: 0;
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;    
 }
 
 
 
 .fecharCarrinho{
-    color: #fff;
+    color: #000000;
     font-weight: bolder;
     font-size: larger;
-    background-color: #000000;
+    background-color: #ffffff;
     width: 30px;
     border: none;
     margin-top: 10px;
@@ -41,7 +39,7 @@ body{
     box-shadow: -2px 0 10px rgb(0, 0, 0, 0.2);
     height: 100vh;
     width: 370px;
-    background-color: #000000;
+    background-color: #ffffff;
     opacity: 1;
 
     
@@ -125,12 +123,55 @@ body{
 
 }
 
-.containerProdutos{
+/*****************************************/
+.containerProdutos {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    height: 80px;
+    margin: 10px auto;
+    box-shadow: 0px 0px 10px 3px #d4d4d4;
+
 }
+
+#iconeRemover {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+#imgCamisaCarrinho {
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.produtoInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.produtoDescricao {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-bottom: 4px;
+}
+
+.produtoValor {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
 
 .containerButton{
     margin-top: 20px;
