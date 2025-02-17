@@ -1,25 +1,25 @@
 const carrinho = document.querySelector(".carrinho")
-//const button = document.querySelectorAll(".cart-button")
+//const abrir = document.querySelectorAll("#botaoAbrir")
 const fechar = document.querySelector(".fecharCarrinho")
-
-////// listar carrinho
 const listarContainer = document.querySelector(".produtoInfo");
 
-/* 
-button.addEventListener("click", (e) => {
+
+abrir.addEventListener("click", (e) => {
     e.preventDefault();
     carrinho.classList.toggle("ativarCarrinho");
 });
+
 
 fechar.addEventListener("click", () => {
     carrinho.classList.remove("ativarCarrinho"); 
 });
 
-*/
+
+
 document.querySelectorAll(".cart-button").forEach(button => {
     button.addEventListener("click", (e) => {
         e.preventDefault();
-
+      
         // Subir na hierarquia até o container do produto
         const produtoContainer = e.target.closest(".container-img");
 
@@ -27,26 +27,34 @@ document.querySelectorAll(".cart-button").forEach(button => {
         const descProduto = produtoContainer.querySelectorAll(".descricao-camisa p");
         const dados = Array.from(descProduto).map(p => p.textContent);
 
-        const buscarItem = localStorage.getItem("descProduto");
-        
-        let array;
-        if(buscarItem == null){
-             array = [];
-        } else{
-            array = JSON.parse(buscarItem);
-            
-        }
-        array.push({ produto: dados });
+        localStorage.setItem("dados", JSON.stringify(dados));
 
+        listaProdutos();
         
-        localStorage.setItem("descProduto", JSON.stringify(array));
         
-       
+
     });
 });
 
+listaProdutos();
+
 function listaProdutos(){
-    
+
+    const produto = JSON.parse(localStorage.getItem("dados")); 
+
+    const produtoNome = document.querySelector(".produtoDescricao");
+
+    const produtoPreco = document.querySelector(".produtoValor")
+    const mensagem = document.querySelector("#mensagemVazia")
+
+         if (produto) {
+            produtoNome.textContent = produto;
+            mensagem.style.display = 'none';
+
+         }else{
+            
+            mensagem.style.display = 'block';
+         }
 }
 
 //localStorage.clear();
