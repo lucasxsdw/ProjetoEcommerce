@@ -1,20 +1,26 @@
 const carrinho = document.querySelector(".carrinho")
-//const abrir = document.querySelectorAll("#botaoAbrir")
+const abrir = document.querySelector("#botaoAbrir")
 const fechar = document.querySelector(".fecharCarrinho")
 const listarContainer = document.querySelector(".produtoInfo");
 
-/*
-abrir.addEventListener("click", (e) => {
-    e.preventDefault();
-    carrinho.classList.toggle("ativarCarrinho");
-});
+
+
+function abrirCarrinho(){
+    abrir.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("clicou");
+        carrinho.classList.toggle("ativarCarrinho");
+    });
+    
+}
+
 
 
 fechar.addEventListener("click", () => {
     carrinho.classList.remove("ativarCarrinho"); 
 });
 
-*/
+
 
 document.querySelectorAll(".cart-button").forEach(button => {
     button.addEventListener("click", (e) => {
@@ -33,6 +39,7 @@ document.querySelectorAll(".cart-button").forEach(button => {
         localStorage.setItem("precoProduto", precoProduto.textContent);
 
         listaProdutos();
+        abrirCarrinho();
         
         
 
