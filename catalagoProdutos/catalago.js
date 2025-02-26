@@ -4,6 +4,14 @@ const botaoAbrir = document.querySelector('.cart-button');
 const botaoFechar = document.querySelector('.fecharCarrinho');
 const containerProdutos = document.querySelector('.containerProdutos');
 const mensagemVazia = document.querySelector('#mensagemVazia');
+const carrinhoIcon = document.querySelector('.carrinhoIcon');
+
+
+carrinhoIcon.addEventListener("click", (e) =>{
+    e.preventDefault();
+    abrirCarrinho();
+    
+})
 
 // Função para abrir o carrinho
 function abrirCarrinho() {
@@ -45,11 +53,11 @@ function renderizarCarrinho() {
     containerProdutos.innerHTML = ''; // Limpa o conteúdo atual do carrinho
 
     if (carrinhoItens.length === 0) {
-        // Se o carrinho estiver vazio, exibe a mensagem
         mensagemVazia.style.display = 'block';
     } else {
         // Se houver produtos, exibe cada um deles
         mensagemVazia.style.display = 'none';
+
         carrinhoItens.forEach(item => {
             const produtoHTML = `
                 <div class="produtoCarrinho">
@@ -58,7 +66,9 @@ function renderizarCarrinho() {
                         <p>${item.descricao}</p>
                         <p>${item.preco}</p>
                         <p>Quantidade: ${item.quantidade}</p>
-                        <button onclick="removerDoCarrinho('${item.id}')">Remover</button>
+                        <button class="ButtonRemuve" onclick="removerDoCarrinho('${item.id}')">Remover</button>
+                       <a href="/RealizarCompra/compra.html"><button  class= "continuarCompraButton" >Continuar</button></a>
+                       
                     </div>
                 </div>
             `;
