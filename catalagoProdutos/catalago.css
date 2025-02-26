@@ -1,25 +1,28 @@
-
-body{
+body {
     background-color: #F2F2F2;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-.carrinho{
+/* Estilo do Carrinho */
+.carrinho {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -370px; /* Esconde o carrinho fora da tela */
+    width: 370px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    box-shadow: -2px 0 10px rgb(0, 0, 0, 0.2);
-    height: 100vh;
-    width: 370px;
-    background-color: #ffffff;
-    opacity: 0; 
-    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;    
 }
 
+.carrinho.ativo {
+    right: 0; /* Mostra o carrinho */
+}
 
-
-.fecharCarrinho{
+.fecharCarrinho {
     color: #000000;
     font-weight: bolder;
     font-size: larger;
@@ -28,41 +31,83 @@ body{
     border: none;
     margin-top: 10px;
     margin-left: 320px;
+    cursor: pointer;
 }
 
-.ativarCarrinho{
-    position: fixed;
-    top: 0;
-    right: 0;
+/* Container dos Produtos no Carrinho */
+.containerProdutos {
+    padding: 10px;
+    overflow-y: auto; /* Permite rolagem se houver muitos produtos */
+}
+
+#mensagemVazia {
+    text-align: center;
+    display: none; /* Esconde a mensagem inicialmente */
+}
+
+/* Estilo de Cada Produto no Carrinho */
+.produtoCarrinho {
     display: flex;
-    flex-direction: column;
-    box-shadow: -2px 0 10px rgb(0, 0, 0, 0.2);
-    height: 100vh;
-    width: 370px;
-    background-color: #ffffff;
-    opacity: 1;
-
-    
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
+.produtoCarrinho img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.produtoInfo {
+    flex: 1;
+}
+
+.produtoDescricao {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-bottom: 4px;
+}
+
+.produtoValor {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Botão de Remover */
+#iconeRemover {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+/* Container do Catálogo de Produtos */
 .container-catalago {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 20px; 
-    padding: 20px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Estilo de Cada Produto no Catálogo */
 .container-img {
-    flex: 1 1 calc(33.33% - 40px); 
-    max-width: calc(33.33% - 40px); 
+    flex: 1 1 calc(33.33% - 40px);
+    max-width: calc(33.33% - 40px);
     background-color: #fff;
     border-radius: 7px;
     box-sizing: border-box;
     padding: 10px;
-    margin: 0 auto; 
     text-align: center;
 }
 
@@ -72,7 +117,15 @@ body{
     border-radius: 7px;
 }
 
+.descricao-camisa {
+    max-width: 100%;
+}
 
+.descricao, .preco {
+    text-align: center;
+}
+
+/* Grupo de Botões */
 .button-group {
     display: flex;
     justify-content: center;
@@ -109,75 +162,26 @@ body{
 .cart-icon {
     width: 20px;
     height: auto;
-    color: #fff;
 }
 
-.descricao-camisa{
-    max-width: 100%;
-
-}
-
-.descricao, .preco{
-    text-align: center;
-
-
-}
-
-/*****************************************/
-.containerProdutos {
+/* Footer */
+.footer {
     display: flex;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    width: 320px;
-    height: 80px;
-    margin: 10px auto;
-    box-shadow: 0px 0px 10px 3px #d4d4d4;
-
-}
-
-#iconeRemover {
-    height: 16px;
-    width: 16px;
-    cursor: pointer;
-    margin-right: 8px;
-}
-
-#imgCamisaCarrinho {
-    height: 60px;
-    width: 60px;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-.produtoInfo {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    margin-left: 10px;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.produtoDescricao {
-    font-size: 12px;
-    font-weight: bold;
-    font-family: sans-serif;
-    margin-bottom: 4px;
-}
-
-.produtoValor {
-    font-size: 14px;
+.footer a {
+    text-decoration: none;
     color: #333;
-    font-weight: bold;
 }
 
-
-.containerButton{
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-    justify-content: space-around;
+.foote-2 {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
 }
-
-

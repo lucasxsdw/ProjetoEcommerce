@@ -10,24 +10,13 @@
 </head>
 <body>
 
-
-   
-<div class="carrinho">
-    <button class="fecharCarrinho">X</button>
-
-    <div class="containerProdutos">
-        <img id="iconeRemover" src="image.png" alt="Remover">
-         <span><img  id="imgCamisaCarrinho" src="" alt="Camisa"></span> 
-
-        <div class="produtoInfo">
-           <p id="mensagemVazia">Nenhum produto cadastrado.</p>
-            <span class="produtoDescricao"></span>
-            <span  class="produtoValor"></span>
+    <div class="carrinho">
+        <button class="fecharCarrinho">X</button>
+        <div class="containerProdutos">
+            <p id="mensagemVazia">Nenhum produto cadastrado.</p>
         </div>
     </div>
-
-    
-</div>
+   
 
 
     <header>
@@ -61,55 +50,37 @@
     </header>
 
     <div class="container-catalago">
-
-        <div class="container-img">
+        <div class="container-img" data-produto-id="1">
             <img class="img" src="../img/img.webp" alt="">
-                <div class="descricao-camisa">
-                    <p class="descricao" >Camisa oversize - Off white</p>
-                    <p  class="preco" >R$ 130,00</p>
-                    <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
-                </div>
-
-
-
+            <div class="descricao-camisa">
+                <p class="descricao">Camisa oversize - Off white</p>
+                <p class="preco">R$ 130,00</p>
+                <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
+            </div>
             <div class="button-group">
-                <a href=""> <button class="buy-button">Comprar</button> </a>
-                
-                <form action="" method="post">
-                    <button type="submit" class="cart-button" >
-                        <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
-                    </button>
-               
-                </form> 
-          
+                <button class="buy-button">Comprar</button>
+                <button class="cart-button">
+                    <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
+                </button>
             </div>
         </div>
 
-        <div class="container-img">
-            <img class="img" src="../img/img.webp" alt="">
-                <div class="descricao-camisa">
-                    <p class="descricao" >Camisa oversize - All Black</p>
-                    <p  class="preco" >R$ 130,00</p>
-                    <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
-                </div>
-
-
-
+        <div class="container-img" data-produto-id="2">
+            <img class="img" src="../img/minimalist oversized t-shirt in blue with details on the back (4).png" alt="">
+            <div class="descricao-camisa">
+                <p class="descricao">Camisa oversize - Off white</p>
+                <p class="preco">R$ 130,00</p>
+                <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
+            </div>
             <div class="button-group">
-                <a href=""> <button class="buy-button">Comprar</button> </a>
-             
-                <form action="" method="post">
-                    <button type="submit" class="cart-button" id="botaoAbrir">
-                        <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
-                    </button>
-                </form>
-                
-          
+                <button class="buy-button">Comprar</button>
+                <button class="cart-button">
+                    <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
+                </button>
             </div>
         </div>
-   
         
-        <div class="container-img">
+        <div class="container-img" data-produto-id="3">
             <img class="img" src="../img/minimalist oversized t-shirt in blue with details on the back (4).png" alt="">
             <div class="descricao-camisa">
                 <p class="descricao" >Camisa oversize - Off white</p>
@@ -125,7 +96,7 @@
         </div>
 
     
-        <div class="container-img">
+        <div class="container-img" data-produto-id="4">
             <img class="img" src="../img/minimalist oversized t-shirt in blue with details on the back (4).png" alt="">
             <div class="descricao-camisa">
                 <p class="descricao" >Camisa oversize - Off white</p>
@@ -141,69 +112,25 @@
         </div>
 
 
-        <div class="container-img">
-            <img class="img" src="../img/minimalist oversized t-shirt in blue with details on the back.png" alt="">
-            <div class="descricao-camisa">
-                <p>Camisa oversize - All black</p>
-                <p>R$ 130,00</p>
-                <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
-            </div>
-            <div class="button-group">
-                <button class="buy-button">Comprar</button>
-                <button class="cart-button">
-                    <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
-                </button>
-            </div>
-        </div>
-
-        <div class="container-img">
-            <img class="img" src="../img/minimalist oversized t-shirt in green with details on the back.png" alt="">
-            <div class="descricao-camisa">
-                <p>Camisa oversize - All black</p>
-                <p>R$ 130,00</p>
-                <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
-            </div>
-            <div class="button-group">
-                <button class="buy-button">Comprar</button>
-                <button class="cart-button">
-                    <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
-                </button>
-            </div>
-        </div>
-
-        <div class="container-img">
-            <img class="img" src="../img/minimalist oversized t-shirt in green with details on the back.png" alt="">
-            <div class="descricao-camisa">
-                <p>Camisa oversize - All black</p>
-                <p>R$ 130,00</p>
-                <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
-            </div>
-            <div class="button-group">
-                <button class="buy-button">Comprar</button>
-                <button class="cart-button">
-                    <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
-                </button>
-            </div>
-        </div>
-
-        <div class="container-img">
-            <img class="img" src="../img/uma camisa oversized sem pessaos e com detalhes, com o fundo branco.png" alt="">
-            <div class="descricao-camisa">
-                <p>Camisa oversize - All black</p>
-                <p>R$ 130,00</p>
-                <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
-            </div>
-            <div class="button-group">
-                <button class="buy-button">Comprar</button>
-                <button class="cart-button">
-                    <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
-                </button>
-            </div>
-        </div>
-
-        <div class="container-img">
+        <div class="container-img" data-produto-id="5">
             <img class="img" src="../img/minimalist oversized t-shirt in blue with details on the back (4).png" alt="">
             <div class="descricao-camisa">
+                <p class="descricao" >Camisa oversize - Off white</p>
+                <p  class="preco" >R$ 130,00</p>
+                <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
+            </div>
+            <div class="button-group">
+                <button class="buy-button">Comprar</button>
+                <button class="cart-button">
+                    <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
+                </button>
+            </div>
+        </div>
+
+
+        <div class="container-img" data-produto-id="6">
+            <img class="img" src="../img/minimalist oversized t-shirt in green with details on the back.png" alt="">
+            <div class="descricao-camisa">
                 <p>Camisa oversize - All black</p>
                 <p>R$ 130,00</p>
                 <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
@@ -215,6 +142,56 @@
                 </button>
             </div>
         </div>
+
+        <div class="container-img" data-produto-id="7">
+            <img class="img" src="../img/minimalist oversized t-shirt in blue with details on the back (4).png" alt="">
+            <div class="descricao-camisa">
+                <p class="descricao" >Camisa oversize - Off white</p>
+                <p  class="preco" >R$ 130,00</p>
+                <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
+            </div>
+            <div class="button-group">
+                <button class="buy-button">Comprar</button>
+                <button class="cart-button">
+                    <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
+                </button>
+            </div>
+        </div>
+
+
+      
+        <div class="container-img" data-produto-id="8">
+            <img class="img" src="../img/minimalist oversized t-shirt in blue with details on the back (4).png" alt="">
+            <div class="descricao-camisa">
+                <p class="descricao" >Camisa oversize - Off white</p>
+                <p  class="preco" >R$ 130,00</p>
+                <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
+            </div>
+            <div class="button-group">
+                <button class="buy-button">Comprar</button>
+                <button class="cart-button">
+                    <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
+                </button>
+            </div>
+        </div>
+
+
+       
+        <div class="container-img" data-produto-id="9">
+            <img class="img" src="../img/minimalist-oversized-t-shirt-in-brown.png" alt="">
+            <div class="descricao-camisa">
+                <p class="descricao" >Camisa oversize - Off white</p>
+                <p  class="preco" >R$ 130,00</p>
+                <p>Ou 5x de R$ 26,00 no cartão s/juros</p>
+            </div>
+            <div class="button-group">
+                <button class="buy-button">Comprar</button>
+                <button class="cart-button">
+                    <img src="../img/carrinho.png" alt="Carrinho" class="cart-icon"> Carrinho
+                </button>
+            </div>
+        </div>
+
         
 
        

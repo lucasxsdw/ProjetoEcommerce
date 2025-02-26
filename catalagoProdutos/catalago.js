@@ -1,74 +1,93 @@
-const carrinho = document.querySelector(".carrinho")
-const abrir = document.querySelector("#botaoAbrir")
-const fechar = document.querySelector(".fecharCarrinho")
-const listarContainer = document.querySelector(".produtoInfo");
+// Seleciona os elementos do carrinho
+const carrinho = document.querySelector('.carrinho');
+const botaoAbrir = document.querySelector('.cart-button');
+const botaoFechar = document.querySelector('.fecharCarrinho');
+const containerProdutos = document.querySelector('.containerProdutos');
+const mensagemVazia = document.querySelector('#mensagemVazia');
 
-
-
-function abrirCarrinho(){
-    abrir.addEventListener("click", (e) => {
-        e.preventDefault();
-        console.log("clicou");
-        carrinho.classList.toggle("ativarCarrinho");
-    });
-    
+// Função para abrir o carrinho
+function abrirCarrinho() {
+    carrinho.classList.add('ativo');
 }
 
+// Função para fechar o carrinho
+function fecharCarrinho() {
+    carrinho.classList.remove('ativo');
+}
 
+// Função para adicionar um produto ao carrinho
+function adicionarAoCarrinho(produto) {
+    let carrinhoItens = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-fechar.addEventListener("click", () => {
-    carrinho.classList.remove("ativarCarrinho"); 
-});
+    // Verifica se o produto já está no carrinho
+    const produtoExistente = carrinhoItens.find(item => item.id === produto.id);
+    if (produtoExistente) {
+        produtoExistente.quantidade += 1; // Incrementa a quantidade se o produto já existe
+    } else {
+        carrinhoItens.push({ ...produto, quantidade: 1 }); // Adiciona o produto ao carrinho
+    }
 
+    localStorage.setItem('carrinho', JSON.stringify(carrinhoItens)); // Atualiza o localStorage
+    renderizarCarrinho(); // Renderiza o carrinho novamente
+}
 
+// Função para remover um produto do carrinho
+function removerDoCarrinho(produtoId) {
+    let carrinhoItens = JSON.parse(localStorage.getItem('carrinho')) || [];
+    carrinhoItens = carrinhoItens.filter(item => item.id !== produtoId); // Remove o produto do array
+    localStorage.setItem('carrinho', JSON.stringify(carrinhoItens)); // Atualiza o localStorage
+    renderizarCarrinho(); // Renderiza o carrinho novamente
+}
 
-document.querySelectorAll(".cart-button").forEach(button => {
-    button.addEventListener("click", (e) => {
+// Função para renderizar os produtos no carrinho
+function renderizarCarrinho() {
+    const carrinhoItens = JSON.parse(localStorage.getItem('carrinho')) || []; // Recupera os itens do carrinho
+    containerProdutos.innerHTML = ''; // Limpa o conteúdo atual do carrinho
+
+    if (carrinhoItens.length === 0) {
+        // Se o carrinho estiver vazio, exibe a mensagem
+        mensagemVazia.style.display = 'block';
+    } else {
+        // Se houver produtos, exibe cada um deles
+        mensagemVazia.style.display = 'none';
+        carrinhoItens.forEach(item => {
+            const produtoHTML = `
+                <div class="produtoCarrinho">
+                    <img src="${item.imagem}" alt="${item.descricao}">
+                    <div class="produtoInfo">
+                        <p>${item.descricao}</p>
+                        <p>${item.preco}</p>
+                        <p>Quantidade: ${item.quantidade}</p>
+                        <button onclick="removerDoCarrinho('${item.id}')">Remover</button>
+                    </div>
+                </div>
+            `;
+            containerProdutos.innerHTML += produtoHTML; // Adiciona o produto ao carrinho
+        });
+    }
+}
+
+// Adiciona evento de clique aos botões de "Carrinho"
+document.querySelectorAll('.cart-button').forEach(button => {
+    button.addEventListener('click', (e) => {
         e.preventDefault();
-       console.log("clicou")
-        
-       
-       const produtoContainer = e.target.closest(".container-img");
-
-        const descProduto = produtoContainer.querySelector(".descricao");
-        const precoProduto = produtoContainer.querySelector(".preco");
-        console.log(descProduto, precoProduto);
-
-
-        localStorage.setItem("descProduto", descProduto.textContent);
-        localStorage.setItem("precoProduto", precoProduto.textContent);
-
-        listaProdutos();
-        abrirCarrinho();
-        
-        
-
+        const produtoContainer = e.target.closest('.container-img'); // Encontra o container do produto
+        const produto = {
+            id: produtoContainer.dataset.produtoId, // ID do produto
+            imagem: produtoContainer.querySelector('.img').src, // URL da imagem
+            descricao: produtoContainer.querySelector('.descricao').textContent, // Descrição do produto
+            preco: produtoContainer.querySelector('.preco').textContent, // Preço do produto
+        };
+        adicionarAoCarrinho(produto); // Adiciona o produto ao carrinho
+        abrirCarrinho(); // Abre o carrinho
     });
 });
 
-listaProdutos();
+// Adiciona eventos de abrir e fechar o carrinho
+botaoAbrir.addEventListener('click', abrirCarrinho);
+botaoFechar.addEventListener('click', fecharCarrinho);
 
-function listaProdutos(){
-
-    const descricao = localStorage.getItem("descProduto"); 
-    const preco = localStorage.getItem("precoProduto"); 
-
-    const produtoNome = document.querySelector(".produtoDescricao"); 
-    const produtoPreco = document.querySelector(".produtoValor");
-
-
-    const mensagem = document.querySelector("#mensagemVazia")
-
-         if (descricao && preco) {
-            produtoNome.textContent = descricao;
-            produtoPreco.textContent = preco;
-            mensagem.style.display = 'none';
-
-         }else{
-            
-            mensagem.style.display = 'block';
-         }
-}
+// Renderiza o carrinho ao carregar a página
+renderizarCarrinho();
 
 //localStorage.clear();
- 
