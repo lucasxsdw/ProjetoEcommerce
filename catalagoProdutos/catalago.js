@@ -23,7 +23,7 @@ function fecharCarrinho() {
     carrinho.classList.remove('ativo');
 }
 
-// Função para adicionar um produto ao carrinho
+
 function adicionarAoCarrinho(produto) {
     let carrinhoItens = JSON.parse(localStorage.getItem('carrinho')) || [];
 
@@ -39,7 +39,7 @@ function adicionarAoCarrinho(produto) {
     renderizarCarrinho(); // Renderiza o carrinho novamente
 }
 
-// Função para remover um produto do carrinho
+
 function removerDoCarrinho(produtoId) {
     let carrinhoItens = JSON.parse(localStorage.getItem('carrinho')) || [];
     carrinhoItens = carrinhoItens.filter(item => item.id !== produtoId); // Remove o produto do array
@@ -47,10 +47,10 @@ function removerDoCarrinho(produtoId) {
     renderizarCarrinho(); // Renderiza o carrinho novamente
 }
 
-// Função para renderizar os produtos no carrinho
+
 function renderizarCarrinho() {
     const carrinhoItens = JSON.parse(localStorage.getItem('carrinho')) || []; // Recupera os itens do carrinho
-    containerProdutos.innerHTML = ''; // Limpa o conteúdo atual do carrinho
+    containerProdutos.innerHTML = ''; 
 
     if (carrinhoItens.length === 0) {
         mensagemVazia.style.display = 'block';
