@@ -13,12 +13,12 @@ carrinhoIcon.addEventListener("click", (e) =>{
     
 })
 
-// Função para abrir o carrinho
+
 function abrirCarrinho() {
     carrinho.classList.add('ativo');
 }
 
-// Função para fechar o carrinho
+
 function fecharCarrinho() {
     carrinho.classList.remove('ativo');
 }
@@ -88,8 +88,8 @@ document.querySelectorAll('.cart-button').forEach(button => {
             descricao: produtoContainer.querySelector('.descricao').textContent, // Descrição do produto
             preco: produtoContainer.querySelector('.preco').textContent, // Preço do produto
         };
-        adicionarAoCarrinho(produto); // Adiciona o produto ao carrinho
-        abrirCarrinho(); // Abre o carrinho
+        adicionarAoCarrinho(produto); 
+        abrirCarrinho(); 
     });
 });
 
