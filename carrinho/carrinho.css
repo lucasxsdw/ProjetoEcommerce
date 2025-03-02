@@ -2,6 +2,12 @@ body{
     background-color: #F2F2F2;
 }
 
+.imgCarrinho{
+    height: 140px;
+    padding-top: 30px;
+    padding-left: 50px;
+    width: 150px;
+}
 
 .container-carrinho{
     display: flex;

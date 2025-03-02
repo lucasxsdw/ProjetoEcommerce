@@ -35,7 +35,7 @@ body {
     cursor: pointer;
 }
 
-/* Container dos Produtos no Carrinho */
+
 .containerProdutos {
     padding: 10px;
     overflow-y: auto; /* Permite rolagem se houver muitos produtos */

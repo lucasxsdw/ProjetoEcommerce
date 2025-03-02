@@ -1,4 +1,4 @@
-// Seleciona os elementos do carrinho
+
 const carrinho = document.querySelector('.carrinho');
 const botaoAbrir = document.querySelector('.cart-button');
 const botaoFechar = document.querySelector('.fecharCarrinho');
