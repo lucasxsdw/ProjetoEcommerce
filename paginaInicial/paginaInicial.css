@@ -4,6 +4,73 @@ body, html{
     box-sizing: border-box;
 }
 
+
+.menu-container{
+    position: fixed;
+    top: 0;
+    /*right: -370px; */
+    width: 370px;
+    height: 100vh;
+    background-color: #000000;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.menu-ativo{
+    right: 0;
+}
+
+.fecharMenu{
+    width: 40px;
+    background-color: #000000;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-left: 330px;
+    padding: 10px;
+    border: none;
+}
+
+.container-redeSociais{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 300px;
+    margin-top: -200px;
+}
+
+.menu-opcoes{
+   display: flex;
+   flex-direction: column;
+   max-width: 100%;
+   gap: 15px;
+
+}
+
+
+.menu-opcoes a{
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+
+
+.logoInsta{
+    width: 30px;
+
+    
+}
+
+.logowhats{
+    width: 30px;
+}
+
 header{
     display: flex;
     justify-content: space-between;
