@@ -8,7 +8,7 @@ body, html{
 .menu-container{
     position: fixed;
     top: 0;
-    /*right: -370px; */
+    right: -370px; 
     width: 370px;
     height: 100vh;
     background-color: #000000;
@@ -16,7 +16,7 @@ body, html{
     transition: right 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    
+    z-index: 1000;
 
 }
 
@@ -44,6 +44,7 @@ body, html{
 }
 
 .menu-opcoes{
+   padding-top: 30px;
    display: flex;
    flex-direction: column;
    max-width: 100%;

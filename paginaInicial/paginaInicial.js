@@ -12,13 +12,12 @@ function fecharMenu(){
 }
 
 
-menu.addEventListener("click", (e)=>{
+menu.addEventListener("click", (e) => {
     e.preventDefault();
     abrirMenu();
 });
 
 
-fecharMenus.addEventListener("click", (a)=>{
-    a.preventDefault();
+fecharMenus.addEventListener("click", () => {
     fecharMenu();
 });
